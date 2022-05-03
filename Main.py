@@ -24,7 +24,7 @@ pary_down=[['-', 'Англійська мова(Comunicate)', '-', 'ООП', 'О
          ['-','Онлайн інструменти','-','-','Схемотехніка','ФЗВ'],
          ['-','Англійська мова(Comunicate)','-','-','WEB-програмування','Схемотехніка']]
 
-pary_down=[['-', 'https://us04web.zoom.us/j/4365350808?pwd=TVFiZFBvaml2RmhsOEY3TjYzWDdEdz09', '-', 'https://us04web.zoom.us/j/4210751889?pwd=SXhxVnhkYUQ4RkdueFN4bUhQV2ZTZz09', 'https://us04web.zoom.us/j/4210751889?pwd=SXhxVnhkYUQ4RkdueFN4bUhQV2ZTZz09', 'Математика'],
+pary_down_links=[['-', 'https://us04web.zoom.us/j/4365350808?pwd=TVFiZFBvaml2RmhsOEY3TjYzWDdEdz09', '-', 'https://us04web.zoom.us/j/4210751889?pwd=SXhxVnhkYUQ4RkdueFN4bUhQV2ZTZz09', 'https://us04web.zoom.us/j/4210751889?pwd=SXhxVnhkYUQ4RkdueFN4bUhQV2ZTZz09', 'Математика'],
          ['-','-','-','https://us04web.zoom.us/j/4210751889?pwd=SXhxVnhkYUQ4RkdueFN4bUhQV2ZTZz09','Історія України','-'],
          ['-','-','Англійська мова', 'https://us04web.zoom.us/j/6471239726?pwd=VnA2aTJ0aFIxaTgxcW5WVmk2NkppQT09', 'Українська література', 'Математика'],
          ['-','https://zoom.us/j/8780854117','-','-','Схемотехніка','https://us04web.zoom.us/j/4796891689?pwd=YUROZzNZbzkyQ0wwdU0rU3NSdDIvQT09'],
@@ -63,7 +63,7 @@ def start_message(message):
 
 @bot.message_handler(commands=['help'])
 def help(message):
-    bot.send_message(message.chat.id, "/start - запуск бота;\n/week - який тиждень(верхній/нижній);\n/shedule_today - розклад на сьогодні;\n/shedule_otweek - розклад на цей тиждень;")
+    bot.send_message(message.chat.id, "/start - запуск бота;\n/week - який тиждень(верхній/нижній);\n/shedule_today - розклад на сьогодні;\n/shedule_otweek - розклад на цей тиждень;\n/schedule_of_calls - розклад дзвінків.")
 
 @bot.message_handler(commands=['week'])
 def week(message):
@@ -110,5 +110,9 @@ def help(message):
                                        + schedule_otweek_func()[4][3] + "\n5. "
                                        + schedule_otweek_func()[4][4] + "\n6. "
                                        + schedule_otweek_func()[4][5]), parse_mode='Markdown')
+
+@bot.message_handler(commands=['schedule_of_calls'])
+def week(message):
+    bot.send_message(message.chat.id, "Розклад дзвінків:\n1. 8:30-9:30\n2. 9:40-10:40\n3. 10:50-11:50\n4. 12:10-13:10\n5. 13:20-14:20\n6. 14:30-15:30")
 
 bot.infinity_polling()
