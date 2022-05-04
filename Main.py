@@ -12,23 +12,23 @@ pary_up=[['-', 'Англійська мова(Comunicate)', '-', 'ООП', 'Ек
          ['-','Онлайн інструменти','-','-','Схемотехніка','ФЗВ'],
          ['-','-','-','Економіка','WEB-програмування','Схемотехніка']]
 
-pary_up_links=[['-', 'https://us04web.zoom.us/j/4365350808?pwd=TVFiZFBvaml2RmhsOEY3TjYzWDdEdz09', '-', 'https://us04web.zoom.us/j/4210751889?pwd=SXhxVnhkYUQ4RkdueFN4bUhQV2ZTZz09', 'https://meet.google.com/zvg-uepp-dok', 'Математика'],
+pary_up_links=[['-', 'https://us04web.zoom.us/j/4365350808?pwd=TVFiZFBvaml2RmhsOEY3TjYzWDdEdz09', '-', 'https://us04web.zoom.us/j/4210751889?pwd=SXhxVnhkYUQ4RkdueFN4bUhQV2ZTZz09', 'https://meet.google.com/zvg-uepp-dok', 'https://zoom.us/j/2957751716?pwd=dEtEU2lXSk8yWUIrVllkNzlLcERwUT09'],
          ['-','-','-','https://us04web.zoom.us/j/4210751889?pwd=SXhxVnhkYUQ4RkdueFN4bUhQV2ZTZz09','Історія України','Історія України'],
-         ['-','-','https://us04web.zoom.us/j/73388415945?pwd=tltb2ilvvczlC21V8cHCNGLNZS6Xen.1', 'https://us04web.zoom.us/j/6471239726?pwd=VnA2aTJ0aFIxaTgxcW5WVmk2NkppQT09', 'Українська література', 'Математика'],
-         ['-','https://zoom.us/j/8780854117','-','-','Схемотехніка','https://us04web.zoom.us/j/4796891689?pwd=YUROZzNZbzkyQ0wwdU0rU3NSdDIvQT09'],
-         ['-','-','-','https://meet.google.com/zvg-uepp-dok','https://us04web.zoom.us/j/6471239726?pwd=VnA2aTJ0aFIxaTgxcW5WVmk2NkppQT09','Схемотехніка']]
+         ['-','-','https://us04web.zoom.us/j/73388415945?pwd=tltb2ilvvczlC21V8cHCNGLNZS6Xen.1', 'https://us04web.zoom.us/j/6471239726?pwd=VnA2aTJ0aFIxaTgxcW5WVmk2NkppQT09', 'https://us04web.zoom.us/j/9989836304?pwd=a1B3Y3cyRy9vTG1jSnNIOVE0V0tHZz09', 'https://zoom.us/j/2957751716?pwd=dEtEU2lXSk8yWUIrVllkNzlLcERwUT09'],
+         ['-','https://zoom.us/j/8780854117','-','-','https://t.me/+oU_FSfiJ_25mNWNi','https://us04web.zoom.us/j/4796891689?pwd=YUROZzNZbzkyQ0wwdU0rU3NSdDIvQT09'],
+         ['-','-','-','https://meet.google.com/zvg-uepp-dok','https://us04web.zoom.us/j/6471239726?pwd=VnA2aTJ0aFIxaTgxcW5WVmk2NkppQT09','https://t.me/+oU_FSfiJ_25mNWNi']]
 
-pary_down=[['-', 'Англійська мова(Comunicate)', '-', 'ООП', 'ООП', 'Математика'],
+pary_down=[['-', 'Англійська мова(Comunicate)', '-', 'ООП', 'ООП', 'Українська мова'],
          ['-','-','-','Машинне навчання','Історія України','-'],
          ['-','-','Англійська мова', 'WEB-програмування', 'Українська література', 'Математика'],
          ['-','Онлайн інструменти','-','-','Схемотехніка','ФЗВ'],
          ['-','Англійська мова(Comunicate)','-','-','WEB-програмування','Схемотехніка']]
 
-pary_down_links=[['-', 'https://us04web.zoom.us/j/4365350808?pwd=TVFiZFBvaml2RmhsOEY3TjYzWDdEdz09', '-', 'https://us04web.zoom.us/j/4210751889?pwd=SXhxVnhkYUQ4RkdueFN4bUhQV2ZTZz09', 'https://us04web.zoom.us/j/4210751889?pwd=SXhxVnhkYUQ4RkdueFN4bUhQV2ZTZz09', 'Математика'],
+pary_down_links=[['-', 'https://us04web.zoom.us/j/4365350808?pwd=TVFiZFBvaml2RmhsOEY3TjYzWDdEdz09', '-', 'https://us04web.zoom.us/j/4210751889?pwd=SXhxVnhkYUQ4RkdueFN4bUhQV2ZTZz09', 'https://us04web.zoom.us/j/4210751889?pwd=SXhxVnhkYUQ4RkdueFN4bUhQV2ZTZz09', 'https://us04web.zoom.us/j/9989836304?pwd=a1B3Y3cyRy9vTG1jSnNIOVE0V0tHZz09'],
          ['-','-','-','https://us04web.zoom.us/j/4210751889?pwd=SXhxVnhkYUQ4RkdueFN4bUhQV2ZTZz09','Історія України','-'],
-         ['-','-','Англійська мова', 'https://us04web.zoom.us/j/6471239726?pwd=VnA2aTJ0aFIxaTgxcW5WVmk2NkppQT09', 'Українська література', 'Математика'],
-         ['-','https://zoom.us/j/8780854117','-','-','Схемотехніка','https://us04web.zoom.us/j/4796891689?pwd=YUROZzNZbzkyQ0wwdU0rU3NSdDIvQT09'],
-         ['-','https://us04web.zoom.us/j/4365350808?pwd=TVFiZFBvaml2RmhsOEY3TjYzWDdEdz09','-','-','https://us04web.zoom.us/j/6471239726?pwd=VnA2aTJ0aFIxaTgxcW5WVmk2NkppQT09','Схемотехніка']]
+         ['-','-','Англійська мова', 'https://us04web.zoom.us/j/6471239726?pwd=VnA2aTJ0aFIxaTgxcW5WVmk2NkppQT09', 'https://us04web.zoom.us/j/9989836304?pwd=a1B3Y3cyRy9vTG1jSnNIOVE0V0tHZz09', 'https://zoom.us/j/2957751716?pwd=dEtEU2lXSk8yWUIrVllkNzlLcERwUT09'],
+         ['-','https://zoom.us/j/8780854117','-','-','https://t.me/+oU_FSfiJ_25mNWNi','https://us04web.zoom.us/j/4796891689?pwd=YUROZzNZbzkyQ0wwdU0rU3NSdDIvQT09'],
+         ['-','https://us04web.zoom.us/j/4365350808?pwd=TVFiZFBvaml2RmhsOEY3TjYzWDdEdz09','-','-','https://us04web.zoom.us/j/6471239726?pwd=VnA2aTJ0aFIxaTgxcW5WVmk2NkppQT09','https://t.me/+oU_FSfiJ_25mNWNi']]
 
 def schedule_today_func():
     if week_counter(start_day)=='_верхній_':
