@@ -143,7 +143,7 @@ def allert(message):
     bot.send_sticker(message.chat.id, stick)
     stick = None
     status = 1
-
+    return status
 
 @bot.message_handler(commands=['ac'])
 def ac(message):
@@ -152,6 +152,7 @@ def ac(message):
     bot.send_sticker(message.chat.id, stick)
     stick = None
     status = 0
+    return status
 
 @bot.message_handler(commands=['allertstatus'])
 def al_status(message):
