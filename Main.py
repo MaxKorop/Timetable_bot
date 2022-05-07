@@ -1,5 +1,6 @@
-import telebot, schedule, requests
-from datetime import date, time
+import telebot, requests, time, allert_checker
+from datetime import date
+from bs4 import BeautifulSoup
 
 start_day=date(day=2, month=5, year=2022)
 token='5095955535:AAGQVJdQqcvjUJPnSBLpxO95feN7YmXMM_A'
@@ -46,6 +47,18 @@ def schedule_today_func_links():
         return pary_up_links[date.weekday(date.today())]
     if week_counter(start_day)=='_нижній_':
         return pary_down_links[date.weekday(date.today())]
+
+def check():
+    url = 'https://kopiyka.org/sirens'
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'lxml')
+    quotes = soup.find_all(attrs={'data-raion': "Черкаський район"})
+    path = str(quotes[0])
+    opacity = float(path[14127:14130])
+    if opacity != 0.9:
+        return True
+    else:
+        return False
 
 def week_counter(start):
     date_today = date.today()
@@ -130,7 +143,7 @@ def week(message):
     bot.send_message(message.chat.id, "Розклад дзвінків:\n1. 8:30-9:30\n2. 9:40-10:40\n3. 10:50-11:50\n4. 12:10-13:10\n5. 13:20-14:20\n6. 14:30-15:30\n_Слава Україні!!!_🇺🇦", parse_mode='Markdown')
 
 @bot.message_handler(commands=['al'])
-def allert(message):
+def al(message):
     stick = open('D:\\Study\\Projects_PyCharm\\Timetable\\al.webp', 'rb')
     bot.delete_message(message.chat.id, message.message_id)
     bot.send_sticker(message.chat.id, stick)
@@ -145,11 +158,9 @@ def ac(message):
     stick = None
     allerts[0] = 0
 
-allerts=[0]
-
 @bot.message_handler(commands=['allertstatus'])
 def al_status(message):
-    if allerts[0]==False:
+    if check()==False:
         bot.send_message(message.chat.id, "Повітряної тривоги немає\n_Слава Україні!!!_🇺🇦", parse_mode='Markdown')
     else:
         bot.send_message(message.chat.id, "Наразі є повітряна тривога\nВсі в укриття!\n_Слава Україні!!!_🇺🇦", parse_mode='Markdown')
