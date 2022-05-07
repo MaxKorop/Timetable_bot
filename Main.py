@@ -1,4 +1,4 @@
-import telebot, requests, time, allert_checker
+import telebot, requests, time
 from datetime import date
 from bs4 import BeautifulSoup
 
