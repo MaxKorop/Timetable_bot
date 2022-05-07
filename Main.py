@@ -9,32 +9,37 @@ bot = telebot.TeleBot(token)
 pary_up=[['-', 'Англійська мова(Comunicate)', '-', 'ООП', 'Екононміка', 'Математика'],
          ['-','-','-','Машинне навчання','Історія України','Історія України'],
          ['-','-','Англійська мова', 'WEB-програмування', 'Українська література', 'Математика'],
-         ['-','Онлайн інструменти','-','-','Схемотехніка','ФЗВ'],
-         ['-','-','-','Економіка','WEB-програмування','Схемотехніка']]
+         ['-','Онлайн інструменти','-','Схемотехніка','ФЗВ','-'],
+         ['-','-','Англійська мова','Економіка','WEB-програмування','Схемотехніка'],
+         ['-','-','-','Машинне навчання','Історія України','-']]
 
 pary_up_links=[['-', 'https://us04web.zoom.us/j/4365350808?pwd=TVFiZFBvaml2RmhsOEY3TjYzWDdEdz09', '-', 'https://us04web.zoom.us/j/4210751889?pwd=SXhxVnhkYUQ4RkdueFN4bUhQV2ZTZz09', 'https://meet.google.com/zvg-uepp-dok', 'https://zoom.us/j/2957751716?pwd=dEtEU2lXSk8yWUIrVllkNzlLcERwUT09'],
          ['-','-','-','https://us04web.zoom.us/j/4210751889?pwd=SXhxVnhkYUQ4RkdueFN4bUhQV2ZTZz09','Історія України','Історія України'],
          ['-','-','https://us04web.zoom.us/j/73388415945?pwd=tltb2ilvvczlC21V8cHCNGLNZS6Xen.1', 'https://us04web.zoom.us/j/6471239726?pwd=VnA2aTJ0aFIxaTgxcW5WVmk2NkppQT09', 'https://us04web.zoom.us/j/9989836304?pwd=a1B3Y3cyRy9vTG1jSnNIOVE0V0tHZz09', 'https://zoom.us/j/2957751716?pwd=dEtEU2lXSk8yWUIrVllkNzlLcERwUT09'],
-         ['-','https://zoom.us/j/8780854117','-','-','https://t.me/+oU_FSfiJ_25mNWNi','https://us04web.zoom.us/j/4796891689?pwd=YUROZzNZbzkyQ0wwdU0rU3NSdDIvQT09'],
-         ['-','-','-','https://meet.google.com/zvg-uepp-dok','https://us04web.zoom.us/j/6471239726?pwd=VnA2aTJ0aFIxaTgxcW5WVmk2NkppQT09','https://t.me/+oU_FSfiJ_25mNWNi']]
+         ['-','https://zoom.us/j/8780854117','-','https://t.me/+oU_FSfiJ_25mNWNi','https://us04web.zoom.us/j/4796891689?pwd=YUROZzNZbzkyQ0wwdU0rU3NSdDIvQT09','-'],
+         ['-','-','https://us04web.zoom.us/j/71851942085?pwd=FfhnaEdW4uzMCAq6X0vXV7lwF54mqi.1','https://meet.google.com/zvg-uepp-dok','https://us04web.zoom.us/j/6471239726?pwd=VnA2aTJ0aFIxaTgxcW5WVmk2NkppQT09','https://t.me/+oU_FSfiJ_25mNWNi'],
+         ['-','-','-','https://us04web.zoom.us/j/4210751889?pwd=SXhxVnhkYUQ4RkdueFN4bUhQV2ZTZz09','Історія України','-']]
 
 pary_down=[['-', 'Англійська мова(Comunicate)', '-', 'ООП', 'ООП', 'Українська мова'],
-         ['-','-','-','Машинне навчання','Історія України','-'],
-         ['-','-','Англійська мова', 'WEB-програмування', 'Українська література', 'Математика'],
-         ['-','Онлайн інструменти','-','-','Схемотехніка','ФЗВ'],
-         ['-','Англійська мова(Comunicate)','-','-','WEB-програмування','Схемотехніка']]
+           ['-','-','-','Машинне навчання','Історія України','-'],
+           ['-','-','Англійська мова', 'WEB-програмування', 'Українська література', 'Математика'],
+           ['-','Онлайн інструменти','-','Схемотехніка','ФЗВ','-'],
+           ['-','Англійська мова(Comunicate)','-','-','WEB-програмування','Схемотехніка'],
+           ['-', '-', 'Англійська мова', 'WEB-програмування', 'Українська література', 'Математика']]
 
 pary_down_links=[['-', 'https://us04web.zoom.us/j/4365350808?pwd=TVFiZFBvaml2RmhsOEY3TjYzWDdEdz09', '-', 'https://us04web.zoom.us/j/4210751889?pwd=SXhxVnhkYUQ4RkdueFN4bUhQV2ZTZz09', 'https://us04web.zoom.us/j/4210751889?pwd=SXhxVnhkYUQ4RkdueFN4bUhQV2ZTZz09', 'https://us04web.zoom.us/j/9989836304?pwd=a1B3Y3cyRy9vTG1jSnNIOVE0V0tHZz09'],
          ['-','-','-','https://us04web.zoom.us/j/4210751889?pwd=SXhxVnhkYUQ4RkdueFN4bUhQV2ZTZz09','Історія України','-'],
          ['-','-','Англійська мова', 'https://us04web.zoom.us/j/6471239726?pwd=VnA2aTJ0aFIxaTgxcW5WVmk2NkppQT09', 'https://us04web.zoom.us/j/9989836304?pwd=a1B3Y3cyRy9vTG1jSnNIOVE0V0tHZz09', 'https://zoom.us/j/2957751716?pwd=dEtEU2lXSk8yWUIrVllkNzlLcERwUT09'],
-         ['-','https://zoom.us/j/8780854117','-','-','https://t.me/+oU_FSfiJ_25mNWNi','https://us04web.zoom.us/j/4796891689?pwd=YUROZzNZbzkyQ0wwdU0rU3NSdDIvQT09'],
+         ['-','https://zoom.us/j/8780854117','-','https://t.me/+oU_FSfiJ_25mNWNi','https://us04web.zoom.us/j/4796891689?pwd=YUROZzNZbzkyQ0wwdU0rU3NSdDIvQT09','-'],
          ['-','https://us04web.zoom.us/j/4365350808?pwd=TVFiZFBvaml2RmhsOEY3TjYzWDdEdz09','-','-','https://us04web.zoom.us/j/6471239726?pwd=VnA2aTJ0aFIxaTgxcW5WVmk2NkppQT09','https://t.me/+oU_FSfiJ_25mNWNi']]
 
 def schedule_today_func():
-    if week_counter(start_day)=='_верхній_':
+    if week_counter(start_day)=='_верхній_' and date.weekday(date.today())!=6:
         return pary_up[date.weekday(date.today())]
-    if week_counter(start_day)=='_нижній_':
+    elif week_counter(start_day)=='_нижній_' and date.weekday(date.today())!=6:
         return pary_down[date.weekday(date.today())]
+    else:
+        return "Сьогодні неділя, пар немає"
 
 def schedule_today_func_links():
     if week_counter(start_day)=='_верхній_':
@@ -59,26 +64,29 @@ def schedule_otweek_func():
 
 @bot.message_handler(commands=['start'])
 def start_message(message):
-    bot.send_message(message.chat.id,"Добрий день, я розклад-бот, я стану вам у пригоді, якщо вам потрібно дізнатися розклад на сьогодні, та швидко підключитися до пари онлайн. \nВивести список команд - /help")
+    bot.send_message(message.chat.id,"Добрий день, я розклад-бот, я стану вам у пригоді, якщо вам потрібно дізнатися розклад на сьогодні, та швидко підключитися до пари онлайн. \nВивести список команд - /help\n_Слава Україні!!!_🇺🇦", parse_mode='Markdown')
 
 @bot.message_handler(commands=['help'])
 def help(message):
-    bot.send_message(message.chat.id, "/start - запуск бота;\n/week - який тиждень(верхній/нижній);\n/shedule_today - розклад на сьогодні;\n/shedule_otweek - розклад на цей тиждень;\n/schedule_of_calls - розклад дзвінків.")
+    bot.send_message(message.chat.id, "/start - запуск бота;\n/week - який тиждень(верхній/нижній);\n/sheduletoday - розклад на сьогодні;\n/sheduleotweek - розклад на цей тиждень;\n/scheduleofcalls - розклад дзвінків.\n_Слава Україні!!!_🇺🇦", parse_mode='Markdown')
 
 @bot.message_handler(commands=['week'])
 def week(message):
-    bot.send_message(message.chat.id, ("Зараз "+ week_counter(start_day)+" тиждень."), parse_mode='Markdown')
+    bot.send_message(message.chat.id, ("Зараз "+ week_counter(start_day)+" тиждень.\n_Слава Україні!!!_🇺🇦"), parse_mode='Markdown')
 
-@bot.message_handler(commands=['shedule_today'])
+@bot.message_handler(commands=['sheduletoday'])
 def help(message):
-    bot.send_message(message.chat.id, ("Розклад на сьогодні:\n1. "+'['+schedule_today_func()[0]+']('+schedule_today_func_links()[0]+')'+"\n2. "
+    if schedule_today_func()=="Сьогодні неділя, пар немає":
+        bot.send_message(message.chat.id, (schedule_today_func()+"\n_Слава Україні!!!_🇺🇦"), parse_mode='Markdown')
+    else:
+        bot.send_message(message.chat.id, ("Розклад на сьогодні:\n1. "+'['+schedule_today_func()[0]+']('+schedule_today_func_links()[0]+')'+"\n2. "
                                        +'['+schedule_today_func()[1]+']('+schedule_today_func_links()[1]+')'+"\n3. "
                                        +'['+schedule_today_func()[2]+']('+schedule_today_func_links()[2]+')'+"\n4. "
                                        +'['+schedule_today_func()[3]+']('+schedule_today_func_links()[3]+')'+"\n5. "
                                        +'['+schedule_today_func()[4]+']('+schedule_today_func_links()[4]+')'+"\n6. "
-                                       +'['+schedule_today_func()[5]+']('+schedule_today_func_links()[5]+')'), parse_mode='Markdown')
+                                       +'['+schedule_today_func()[5]+']('+schedule_today_func_links()[5]+')'+"\n_Слава Україні!!!_🇺🇦"), parse_mode='Markdown')
 
-@bot.message_handler(commands=['shedule_otweek'])
+@bot.message_handler(commands=['sheduleotweek'])
 def help(message):
     bot.send_message(message.chat.id, ("Розклад на тиждень:\n\n*Понеділок:* \n1. " + schedule_otweek_func()[0][0] + "\n2. "
                                        + schedule_otweek_func()[0][1] + "\n3. "
@@ -109,10 +117,16 @@ def help(message):
                                        + schedule_otweek_func()[4][2] + "\n4. "
                                        + schedule_otweek_func()[4][3] + "\n5. "
                                        + schedule_otweek_func()[4][4] + "\n6. "
-                                       + schedule_otweek_func()[4][5]), parse_mode='Markdown')
+                                       + schedule_otweek_func()[4][5] + "\n\n*Субота:*\n1. "
+                                       + schedule_otweek_func()[5][0] + "\n2. "
+                                       + schedule_otweek_func()[5][1] + "\n3. "
+                                       + schedule_otweek_func()[5][2] + "\n4. "
+                                       + schedule_otweek_func()[5][3] + "\n5. "
+                                       + schedule_otweek_func()[5][4] + "\n6. "
+                                       + schedule_otweek_func()[5][5] + "\n_Слава Україні!!!_🇺🇦"), parse_mode='Markdown')
 
-@bot.message_handler(commands=['schedule_of_calls'])
+@bot.message_handler(commands=['scheduleofcalls'])
 def week(message):
-    bot.send_message(message.chat.id, "Розклад дзвінків:\n1. 8:30-9:30\n2. 9:40-10:40\n3. 10:50-11:50\n4. 12:10-13:10\n5. 13:20-14:20\n6. 14:30-15:30")
+    bot.send_message(message.chat.id, "Розклад дзвінків:\n1. 8:30-9:30\n2. 9:40-10:40\n3. 10:50-11:50\n4. 12:10-13:10\n5. 13:20-14:20\n6. 14:30-15:30\n_Слава Україні!!!_🇺🇦", parse_mode='Markdown')
 
 bot.infinity_polling()
