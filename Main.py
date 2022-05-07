@@ -2,7 +2,6 @@ import telebot, schedule, requests
 from datetime import date, time
 
 start_day=date(day=2, month=5, year=2022)
-status = None
 token='5095955535:AAGQVJdQqcvjUJPnSBLpxO95feN7YmXMM_A'
 bot = telebot.TeleBot(token)
 
@@ -62,12 +61,6 @@ def schedule_otweek_func():
         return pary_up
     if week_counter(start_day)=='_нижній_':
         return pary_down
-
-def status_func():
-    if satus == 0:
-        return True
-    else:
-        return False
 
 @bot.message_handler(commands=['start'])
 def start_message(message):
@@ -142,8 +135,7 @@ def allert(message):
     bot.delete_message(message.chat.id, message.message_id)
     bot.send_sticker(message.chat.id, stick)
     stick = None
-    status = 1
-    return status
+    allerts[0] = 1
 
 @bot.message_handler(commands=['ac'])
 def ac(message):
@@ -151,15 +143,15 @@ def ac(message):
     bot.delete_message(message.chat.id, message.message_id)
     bot.send_sticker(message.chat.id, stick)
     stick = None
-    status = 0
-    return status
+    allerts[0] = 0
+
+allerts=[0]
 
 @bot.message_handler(commands=['allertstatus'])
 def al_status(message):
-    if status_func()==True:
+    if allerts[0]==False:
         bot.send_message(message.chat.id, "Повітряної тривоги немає\n_Слава Україні!!!_🇺🇦", parse_mode='Markdown')
     else:
         bot.send_message(message.chat.id, "Наразі є повітряна тривога\nВсі в укриття!\n_Слава Україні!!!_🇺🇦", parse_mode='Markdown')
 
-print(status)
 bot.infinity_polling()
