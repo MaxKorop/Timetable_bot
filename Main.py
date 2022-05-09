@@ -3,7 +3,7 @@ from datetime import date
 from bs4 import BeautifulSoup
 
 start_day=date(day=2, month=5, year=2022)
-token='5095955535:AAGQVJdQqcvjUJPnSBLpxO95feN7YmXMM_A'
+token='5148310056:AAGLl8CZVxL5FVqUQiiWgYfDXpbt1R6byac'
 bot = telebot.TeleBot(token)
 
 pary_up=[['-', 'Англійська мова(Comunicate)', '-', 'ООП', 'Екононміка', 'Математика'],
@@ -11,14 +11,14 @@ pary_up=[['-', 'Англійська мова(Comunicate)', '-', 'ООП', 'Ек
          ['-','-','Англійська мова', 'WEB-програмування', 'Українська література', 'Математика'],
          ['-','Онлайн інструменти','-','Схемотехніка','ФЗВ','-'],
          ['-','-','Англійська мова','Економіка','WEB-програмування','Схемотехніка'],
-         ['-','-','-','Машинне навчання','Історія України','-']]
+         ['-','Онлайн інструменти','-','Схемотехніка','ФЗВ','-']]
 
 pary_up_links=[['-', 'https://us04web.zoom.us/j/4365350808?pwd=TVFiZFBvaml2RmhsOEY3TjYzWDdEdz09', '-', 'https://us04web.zoom.us/j/4210751889?pwd=SXhxVnhkYUQ4RkdueFN4bUhQV2ZTZz09', 'https://meet.google.com/zvg-uepp-dok', 'https://zoom.us/j/2957751716?pwd=dEtEU2lXSk8yWUIrVllkNzlLcERwUT09'],
          ['-','-','-','https://us04web.zoom.us/j/4210751889?pwd=SXhxVnhkYUQ4RkdueFN4bUhQV2ZTZz09','https://us05web.zoom.us/j/82698146962?pwd=dms0NmxyeWlORzdYVFAyUGNBQUl1Zz09','https://us05web.zoom.us/j/82698146962?pwd=dms0NmxyeWlORzdYVFAyUGNBQUl1Zz09'],
          ['-','-','https://us04web.zoom.us/j/73388415945?pwd=tltb2ilvvczlC21V8cHCNGLNZS6Xen.1', 'https://us04web.zoom.us/j/6471239726?pwd=VnA2aTJ0aFIxaTgxcW5WVmk2NkppQT09', 'https://us04web.zoom.us/j/9989836304?pwd=a1B3Y3cyRy9vTG1jSnNIOVE0V0tHZz09', 'https://zoom.us/j/2957751716?pwd=dEtEU2lXSk8yWUIrVllkNzlLcERwUT09'],
          ['-','https://zoom.us/j/8780854117','-','https://t.me/+oU_FSfiJ_25mNWNi','https://us04web.zoom.us/j/4796891689?pwd=YUROZzNZbzkyQ0wwdU0rU3NSdDIvQT09','-'],
          ['-','-','https://us04web.zoom.us/j/71851942085?pwd=FfhnaEdW4uzMCAq6X0vXV7lwF54mqi.1','https://meet.google.com/zvg-uepp-dok','https://us04web.zoom.us/j/6471239726?pwd=VnA2aTJ0aFIxaTgxcW5WVmk2NkppQT09','https://t.me/+oU_FSfiJ_25mNWNi'],
-         ['-','-','-','https://us04web.zoom.us/j/4210751889?pwd=SXhxVnhkYUQ4RkdueFN4bUhQV2ZTZz09','https://us05web.zoom.us/j/82698146962?pwd=dms0NmxyeWlORzdYVFAyUGNBQUl1Zz09','-']]
+         ['-','https://zoom.us/j/8780854117','-','https://t.me/+oU_FSfiJ_25mNWNi','https://us04web.zoom.us/j/4796891689?pwd=YUROZzNZbzkyQ0wwdU0rU3NSdDIvQT09','-']]
 
 pary_down=[['-', 'Англійська мова(Comunicate)', '-', 'ООП', 'ООП', 'Українська мова'],
            ['-','-','-','Машинне навчання','Історія України','-'],
@@ -47,6 +47,13 @@ def schedule_today_func_links():
         return pary_up_links[date.weekday(date.today())]
     if week_counter(start_day)=='_нижній_':
         return pary_down_links[date.weekday(date.today())]
+@bot.message_handler(func=lambda message: True)
+def check_tg_Skichko(message):
+
+    if message.text == '''УСЯ ЧЕРКАСЬКА ОБЛАСТЬ 
+❗️❗️ПОВІТРЯНА ТРИВОГА ************''':
+
+
 
 def check():
     url = 'https://kopiyka.org/sirens'
@@ -55,6 +62,7 @@ def check():
     quotes = soup.find_all(attrs={'data-raion': "Черкаський район"})
     path = str(quotes[0])
     opacity = float(path[14127:14130])
+    print(opacity, path)
     if opacity != 0.9:
         return True
     else:
