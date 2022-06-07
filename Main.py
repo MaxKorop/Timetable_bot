@@ -4,56 +4,31 @@ from bs4 import BeautifulSoup
 
 start_day=date(day=2, month=5, year=2022)
 token='5148310056:AAGLl8CZVxL5FVqUQiiWgYfDXpbt1R6byac'
-bot = telebot.TeleBot(token)
+bot1 = telebot.TeleBot(token)
 
-pary_up=[['-', 'Англійська мова(Comunicate)', '-', 'ООП', 'Екононміка', 'Математика'],
-         ['-','-','-','Машинне навчання','Історія України','Історія України'],
-         ['-','-','Англійська мова', 'WEB-програмування', 'Українська література', 'Математика'],
-         ['-','Онлайн інструменти','-','Схемотехніка','ФЗВ','-'],
-         ['-','-','Англійська мова','Економіка','WEB-програмування','Схемотехніка'],
-         ['-','Онлайн інструменти','-','Схемотехніка','ФЗВ','-']]
+classes_up=["Практика"]
 
-pary_up_links=[['-', 'https://us04web.zoom.us/j/4365350808?pwd=TVFiZFBvaml2RmhsOEY3TjYzWDdEdz09', '-', 'https://us04web.zoom.us/j/4210751889?pwd=SXhxVnhkYUQ4RkdueFN4bUhQV2ZTZz09', 'https://meet.google.com/zvg-uepp-dok', 'https://zoom.us/j/2957751716?pwd=dEtEU2lXSk8yWUIrVllkNzlLcERwUT09'],
-         ['-','-','-','https://us04web.zoom.us/j/4210751889?pwd=SXhxVnhkYUQ4RkdueFN4bUhQV2ZTZz09','https://us05web.zoom.us/j/82698146962?pwd=dms0NmxyeWlORzdYVFAyUGNBQUl1Zz09','https://us05web.zoom.us/j/82698146962?pwd=dms0NmxyeWlORzdYVFAyUGNBQUl1Zz09'],
-         ['-','-','https://us04web.zoom.us/j/73388415945?pwd=tltb2ilvvczlC21V8cHCNGLNZS6Xen.1', 'https://us04web.zoom.us/j/6471239726?pwd=VnA2aTJ0aFIxaTgxcW5WVmk2NkppQT09', 'https://us04web.zoom.us/j/9989836304?pwd=a1B3Y3cyRy9vTG1jSnNIOVE0V0tHZz09', 'https://zoom.us/j/2957751716?pwd=dEtEU2lXSk8yWUIrVllkNzlLcERwUT09'],
-         ['-','https://zoom.us/j/8780854117','-','https://t.me/+oU_FSfiJ_25mNWNi','https://us04web.zoom.us/j/4796891689?pwd=YUROZzNZbzkyQ0wwdU0rU3NSdDIvQT09','-'],
-         ['-','-','https://us04web.zoom.us/j/71851942085?pwd=FfhnaEdW4uzMCAq6X0vXV7lwF54mqi.1','https://meet.google.com/zvg-uepp-dok','https://us04web.zoom.us/j/6471239726?pwd=VnA2aTJ0aFIxaTgxcW5WVmk2NkppQT09','https://t.me/+oU_FSfiJ_25mNWNi'],
-         ['-','https://zoom.us/j/8780854117','-','https://t.me/+oU_FSfiJ_25mNWNi','https://us04web.zoom.us/j/4796891689?pwd=YUROZzNZbzkyQ0wwdU0rU3NSdDIvQT09','-']]
+classes_up_links=['https://us04web.zoom.us/j/6195582246?pwd=RXJ5QUdpVlZGcnlpWUVBd2R0eE5uQT09']
 
-pary_down=[['-', 'Англійська мова(Comunicate)', '-', 'ООП', 'ООП', 'Українська мова'],
-           ['-','-','-','Машинне навчання','Історія України','-'],
-           ['-','-','Англійська мова', 'WEB-програмування', 'Українська література', 'Математика'],
-           ['-','Онлайн інструменти','-','Схемотехніка','ФЗВ','-'],
-           ['-','Англійська мова(Comunicate)','-','-','WEB-програмування','Схемотехніка'],
-           ['-', '-', 'Англійська мова', 'WEB-програмування', 'Українська література', 'Математика']]
+classes_down=["Практика"]
 
-pary_down_links=[['-', 'https://us04web.zoom.us/j/4365350808?pwd=TVFiZFBvaml2RmhsOEY3TjYzWDdEdz09', '-', 'https://us04web.zoom.us/j/4210751889?pwd=SXhxVnhkYUQ4RkdueFN4bUhQV2ZTZz09', 'https://us04web.zoom.us/j/4210751889?pwd=SXhxVnhkYUQ4RkdueFN4bUhQV2ZTZz09', 'https://us04web.zoom.us/j/9989836304?pwd=a1B3Y3cyRy9vTG1jSnNIOVE0V0tHZz09'],
-         ['-','-','-','https://us04web.zoom.us/j/4210751889?pwd=SXhxVnhkYUQ4RkdueFN4bUhQV2ZTZz09','https://us05web.zoom.us/j/82698146962?pwd=dms0NmxyeWlORzdYVFAyUGNBQUl1Zz09','-'],
-         ['-','-','Англійська мова', 'https://us04web.zoom.us/j/6471239726?pwd=VnA2aTJ0aFIxaTgxcW5WVmk2NkppQT09', 'https://us04web.zoom.us/j/9989836304?pwd=a1B3Y3cyRy9vTG1jSnNIOVE0V0tHZz09', 'https://zoom.us/j/2957751716?pwd=dEtEU2lXSk8yWUIrVllkNzlLcERwUT09'],
-         ['-','https://zoom.us/j/8780854117','-','https://t.me/+oU_FSfiJ_25mNWNi','https://us04web.zoom.us/j/4796891689?pwd=YUROZzNZbzkyQ0wwdU0rU3NSdDIvQT09','-'],
-         ['-','https://us04web.zoom.us/j/4365350808?pwd=TVFiZFBvaml2RmhsOEY3TjYzWDdEdz09','-','-','https://us04web.zoom.us/j/6471239726?pwd=VnA2aTJ0aFIxaTgxcW5WVmk2NkppQT09','https://t.me/+oU_FSfiJ_25mNWNi'],
-         ['-','-','Англійська мова', 'https://us04web.zoom.us/j/6471239726?pwd=VnA2aTJ0aFIxaTgxcW5WVmk2NkppQT09', 'https://us04web.zoom.us/j/9989836304?pwd=a1B3Y3cyRy9vTG1jSnNIOVE0V0tHZz09', 'https://zoom.us/j/2957751716?pwd=dEtEU2lXSk8yWUIrVllkNzlLcERwUT09']]
+classes_down_links=['https://us04web.zoom.us/j/6195582246?pwd=RXJ5QUdpVlZGcnlpWUVBd2R0eE5uQT09']
 
 def schedule_today_func():
-    if week_counter(start_day)=='_верхній_' and date.weekday(date.today())!=6:
-        return pary_up[date.weekday(date.today())]
-    elif week_counter(start_day)=='_нижній_' and date.weekday(date.today())!=6:
-        return pary_down[date.weekday(date.today())]
-    else:
-        return "Сьогодні неділя, пар немає"
+    if week_counter(start_day)=='_верхній_' and date.weekday(date.today())!=6 and date.weekday(date.today())!=5:
+        return classes_up[0]#date.weekday(date.today())]
+    elif week_counter(start_day)=='_нижній_' and date.weekday(date.today())!=6 and date.weekday(date.today())!=5:
+        return classes_down[0]#date.weekday(date.today())]
+    elif date.weekday(date.today())==6:
+        return "Сьогодні неділя, практики немає"
+    elif date.weekday(date.today())==5:
+        return "Сьогодні субота, практики немає"
 
 def schedule_today_func_links():
     if week_counter(start_day)=='_верхній_':
-        return pary_up_links[date.weekday(date.today())]
+        return classes_up_links[0]#date.weekday(date.today())]
     if week_counter(start_day)=='_нижній_':
-        return pary_down_links[date.weekday(date.today())]
-@bot.message_handler(func=lambda message: True)
-def check_tg_Skichko(message):
-
-    if message.text == '''УСЯ ЧЕРКАСЬКА ОБЛАСТЬ 
-❗️❗️ПОВІТРЯНА ТРИВОГА ************''':
-
-
+        return classes_down_links[0]#date.weekday(date.today())]
 
 def check():
     url = 'https://kopiyka.org/sirens'
@@ -83,31 +58,31 @@ def schedule_otweek_func():
     if week_counter(start_day)=='_нижній_':
         return pary_down
 
-@bot.message_handler(commands=['start'])
+@bot1.message_handler(commands=['start'])
 def start_message(message):
     bot.send_message(message.chat.id,"Добрий день, я розклад-бот, я стану вам у пригоді, якщо вам потрібно дізнатися розклад на сьогодні, та швидко підключитися до пари онлайн. \nВивести список команд - /help\n_Слава Україні!!!_🇺🇦", parse_mode='Markdown')
 
-@bot.message_handler(commands=['help'])
+@bot1.message_handler(commands=['help'])
 def help(message):
     bot.send_message(message.chat.id, "/start - запуск бота;\n/week - який тиждень(верхній/нижній);\n/sheduletoday - розклад на сьогодні;\n/sheduleotweek - розклад на цей тиждень;\n/scheduleofcalls - розклад дзвінків;\n/allertstatus - статус повітряної тривоги.\n_Слава Україні!!!_🇺🇦", parse_mode='Markdown')
 
-@bot.message_handler(commands=['week'])
+#@bot1.message_handler(commands=['week'])
 def week(message):
     bot.send_message(message.chat.id, ("Зараз "+ week_counter(start_day)+" тиждень.\n_Слава Україні!!!_🇺🇦"), parse_mode='Markdown')
 
-@bot.message_handler(commands=['sheduletoday'])
+@bot1.message_handler(commands=['sheduletoday'])
 def help(message):
     if schedule_today_func()=="Сьогодні неділя, пар немає":
         bot.send_message(message.chat.id, (schedule_today_func()+"\n_Слава Україні!!!_🇺🇦"), parse_mode='Markdown')
     else:
-        bot.send_message(message.chat.id, ("Розклад на сьогодні:\n1. "+'['+schedule_today_func()[0]+']('+schedule_today_func_links()[0]+')'+"\n2. "
-                                       +'['+schedule_today_func()[1]+']('+schedule_today_func_links()[1]+')'+"\n3. "
-                                       +'['+schedule_today_func()[2]+']('+schedule_today_func_links()[2]+')'+"\n4. "
-                                       +'['+schedule_today_func()[3]+']('+schedule_today_func_links()[3]+')'+"\n5. "
-                                       +'['+schedule_today_func()[4]+']('+schedule_today_func_links()[4]+')'+"\n6. "
-                                       +'['+schedule_today_func()[5]+']('+schedule_today_func_links()[5]+')'+"\n_Слава Україні!!!_🇺🇦"), parse_mode='Markdown')
+        bot.send_message(message.chat.id, ("Розклад на сьогодні:\n\n["+ schedule_today_func()+']('+ schedule_today_func_links()+')'+"\n\n_Слава Україні!!!_🇺🇦"), parse_mode='Markdown')#("Розклад на сьогодні:\n1. "+'['+schedule_today_func()[0]+']('+schedule_today_func_links()[0]+')'+"\n2. "
+                                       #+'['+schedule_today_func()[1]+']('+schedule_today_func_links()[1]+')'+"\n3. "
+                                       #+'['+schedule_today_func()[2]+']('+schedule_today_func_links()[2]+')'+"\n4. "
+                                       #+'['+schedule_today_func()[3]+']('+schedule_today_func_links()[3]+')'+"\n5. "
+                                       #+'['+schedule_today_func()[4]+']('+schedule_today_func_links()[4]+')'+"\n6. "
+                                       #+'['+schedule_today_func()[5]+']('+schedule_today_func_links()[5]+')'+"\n_Слава Україні!!!_🇺🇦"), parse_mode='Markdown')
 
-@bot.message_handler(commands=['sheduleotweek'])
+#@bot1.message_handler(commands=['sheduleotweek'])
 def help(message):
     bot.send_message(message.chat.id, ("Розклад на тиждень:\n\n*Понеділок:* \n1. " + schedule_otweek_func()[0][0] + "\n2. "
                                        + schedule_otweek_func()[0][1] + "\n3. "
@@ -146,11 +121,11 @@ def help(message):
                                        + schedule_otweek_func()[5][4] + "\n6. "
                                        + schedule_otweek_func()[5][5] + "\n_Слава Україні!!!_🇺🇦"), parse_mode='Markdown')
 
-@bot.message_handler(commands=['scheduleofcalls'])
+@bot1.message_handler(commands=['scheduleofcalls'])
 def week(message):
     bot.send_message(message.chat.id, "Розклад дзвінків:\n1. 8:30-9:30\n2. 9:40-10:40\n3. 10:50-11:50\n4. 12:10-13:10\n5. 13:20-14:20\n6. 14:30-15:30\n_Слава Україні!!!_🇺🇦", parse_mode='Markdown')
 
-@bot.message_handler(commands=['al'])
+#@bot1.message_handler(commands=['al'])
 def al(message):
     stick = open('D:\\Study\\Projects_PyCharm\\Timetable\\al.webp', 'rb')
     bot.delete_message(message.chat.id, message.message_id)
@@ -158,7 +133,7 @@ def al(message):
     stick = None
     allerts[0] = 1
 
-@bot.message_handler(commands=['ac'])
+#@bot1.message_handler(commands=['ac'])
 def ac(message):
     stick = open('D:\\Study\\Projects_PyCharm\\Timetable\\ac.webp', 'rb')
     bot.delete_message(message.chat.id, message.message_id)
@@ -166,11 +141,72 @@ def ac(message):
     stick = None
     allerts[0] = 0
 
-@bot.message_handler(commands=['allertstatus'])
+@bot1.message_handler(commands=['cid'])
+def chat_id(message):
+    chat_id = message.chat.id
+    file = open(r"D:\Study\Projects_PyCharm\Timetable\schedules\_" + file_name() +".txt", mode="r+", encoding="UTF-8")
+    for lines in file:
+        id = []
+        for i in lines:
+            if i !="^":
+                id.append(i)
+            else:
+                break
+        if ("".join(id)) == str(chat_id):
+            index = lines.index("^")
+            index_l = lines.index("~")
+            data = []
+            link = []
+            symbols = len(lines)
+            for i in range(index+1, symbols):
+                if lines[i] == "~":
+                    break
+                data.append(lines[i])
+            for i in range(index_l+1, symbols):
+                link.append(lines[i])
+            bot.send_message(message.chat.id, "["+"".join(data)+"]("+"".join(link)+")", parse_mode="Markdown")
+    file.close()
+
+def file_name():
+    mon = "Monday"
+    tue = "Tuesday"
+    wed = "Wednesday"
+    thu = "Thursday"
+    fri = "Friday"
+    if date.weekday(date.today()) == 0:
+        return "Monday"
+    if date.weekday(date.today()) == 1:
+        return "Tuesday"
+    if date.weekday(date.today()) == 2:
+        return "Wednesday"
+    if date.weekday(date.today()) == 3:
+        return "Thursday"
+    if date.weekday(date.today()) == 4:
+        return "Friday"
+
+#import logging
+#from aiogram import types, executor, Bot, Dispatcher
+
+#button_bot = Bot(token=token)
+#dp = Dispatcher(button_bot)
+#logging.basicConfig(level=logging.INFO)
+
+#@dp.message_handler(commands="add")
+#async def adding(message: types.Message):
+    #file = open(r"D:\Study\Projects_PyCharm\Timetable\schedules\Тестовий_файл.txt", mode="a+", encoding="UTF-8")
+    #keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    #buttons = ["Понеділок", "Вівторок", "Середа", "Четвер", "П'ятниця"]
+    #keyboard.add(*buttons)
+    #await message.answer("Оберіть день", reply_markup=keyboard)
+    #file.close()
+
+#executor.start_polling(button_bot, skip_updates=True)
+
+#@bot1.message_handler(commands=['allertstatus'])
 def al_status(message):
     if check()==False:
         bot.send_message(message.chat.id, "Повітряної тривоги немає\n_Слава Україні!!!_🇺🇦", parse_mode='Markdown')
     else:
         bot.send_message(message.chat.id, "Наразі є повітряна тривога\nВсі в укриття!\n_Слава Україні!!!_🇺🇦", parse_mode='Markdown')
 
-bot.infinity_polling()
+bot1.infinity_polling()
