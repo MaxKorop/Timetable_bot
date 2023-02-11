@@ -3,7 +3,7 @@ from datetime import date
 
 #03/05/2022
 
-start_day=date(day=15, month=8, year=2022)
+start_day=date(day=6, month=2, year=2023)
 token='5148310056:AAGLl8CZVxL5FVqUQiiWgYfDXpbt1R6byac'
 bot = telebot.TeleBot(token)
 
