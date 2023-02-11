@@ -1,5 +1,6 @@
 import telebot
 from datetime import date
+import scheduleFromTables
 
 #03/05/2022
 
@@ -64,7 +65,9 @@ def scheduleOfCalls(message):
 
 @bot.message_handler(commands=['scheduletoday'])
 def scheduleToday(message):
-    file = open(r'Schedules\Schedule_2P-20.txt', mode="r", encoding="UTF-8")
+    schedule = scheduleFromTables.getScheduleForDay(week_counter(start_day), date.weekday(date.today())+1)
+    bot.send_message(message.chat.id, "Розклад на сьогодні:\n"+schedule+"\n_Слава Україні!!!_🇺🇦", parse_mode="Markdown")
+    '''file = open(r'Schedules\Schedule_2P-20.txt', mode="r", encoding="UTF-8")
     lines = []
     for line in file:
         lines.append(line)
@@ -78,11 +81,13 @@ def scheduleToday(message):
         schedule_on_day.append(a)
     #print(str(message.from_user))
     bot.send_message(message.chat.id, "Розклад на сьогодні:\n"+"".join(schedule_on_day)+"\n_Слава Україні!!!_🇺🇦", parse_mode="Markdown")
-    file.close()
+    file.close()'''
 
 @bot.message_handler(commands=['scheduleotweek'])
 def scheduleOTWeek(message):
-    file = open(r'Schedules\Schedule_2P-20.txt', mode="r", encoding="UTF-8")
+    schedule = scheduleFromTables.getScheduleForWeek(week_counter(start_day))
+    bot.send_message(message.chat.id, "Розклад на тиждень:\n"+schedule+"\n_Слава Україні!!!_🇺🇦", parse_mode="Markdown")
+    '''file = open(r'Schedules\Schedule_2P-20.txt', mode="r", encoding="UTF-8")
     lines = []
     for line in file:
         lines.append(line)
@@ -104,6 +109,6 @@ def scheduleOTWeek(message):
             schedule_on_week.append('\n')
     #print(str(message.from_user))
     bot.send_message(message.chat.id, "Розклад на тиждень:\n"+"".join(schedule_on_week)+"\n_Слава Україні!!!_🇺🇦", parse_mode="Markdown")
-    file.close()
+    file.close()'''
 
 bot.infinity_polling()
