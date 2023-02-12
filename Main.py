@@ -61,12 +61,13 @@ def week(message):
 
 @bot.message_handler(commands=['scheduleofcalls'])
 def scheduleOfCalls(message):
-    bot.send_message(message.chat.id, "Розклад дзвінків:\n\n1. 8:30-9:30\n2. 9:40-10:40\n3. 10:50-11:50\n4. 12:00-13:00\n5. 13:10-14:10\n6. 14:20-15:20\n7. 15:30-16:30\n8. 16:40-17:40\n9. 17:50-18:50\n\n_Слава Україні!!!_🇺🇦", parse_mode='Markdown')
+    #bot.send_message(message.chat.id, "Розклад дзвінків:\n\n1. 8:30-9:30\n2. 9:40-10:40\n3. 10:50-11:50\n4. 12:00-13:00\n5. 13:10-14:10\n6. 14:20-15:20\n7. 15:30-16:30\n8. 16:40-17:40\n9. 17:50-18:50\n\n_Слава Україні!!!_🇺🇦", parse_mode='Markdown')
+    bot.send_message(message.chat.id, "Розклад дзвінків:\n\n"+scheduleFromTables.getScheduleOfCalls()+"\n\n_Слава Україні!!!_🇺🇦", parse_mode='Markdown')
 
 @bot.message_handler(commands=['scheduletoday'])
 def scheduleToday(message):
     schedule = scheduleFromTables.getScheduleForDay(week_counter(start_day), date.weekday(date.today())+1)
-    bot.send_message(message.chat.id, "Розклад на сьогодні:\n"+schedule+"\n_Слава Україні!!!_🇺🇦", parse_mode="Markdown")
+    bot.send_message(message.chat.id, "Розклад на сьогодні:\n\n"+schedule+"\n_Слава Україні!!!_🇺🇦", parse_mode="Markdown")
     '''file = open(r'Schedules\Schedule_2P-20.txt', mode="r", encoding="UTF-8")
     lines = []
     for line in file:
@@ -86,7 +87,7 @@ def scheduleToday(message):
 @bot.message_handler(commands=['scheduleotweek'])
 def scheduleOTWeek(message):
     schedule = scheduleFromTables.getScheduleForWeek(week_counter(start_day))
-    bot.send_message(message.chat.id, "Розклад на тиждень:\n"+schedule+"\n_Слава Україні!!!_🇺🇦", parse_mode="Markdown")
+    bot.send_message(message.chat.id, "Розклад на тиждень:\n\n"+schedule+"\n_Слава Україні!!!_🇺🇦", parse_mode="Markdown")
     '''file = open(r'Schedules\Schedule_2P-20.txt', mode="r", encoding="UTF-8")
     lines = []
     for line in file:
