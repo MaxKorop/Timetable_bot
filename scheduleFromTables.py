@@ -37,7 +37,7 @@ def getScheduleForWeek(week):
     return schedule
 
 def getScheduleOfCalls():
-    path = r'Database/Schedule (Calls).xlsx'
+    path = r'Schedules/Schedule (Calls).xlsx'
     wbObj = openpyxl.load_workbook(path)
     sheetObj = wbObj.active
     schedule = ''
